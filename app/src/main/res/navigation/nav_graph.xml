@@ -1,0 +1,14 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_splash">
+
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.github.mobdev778.yusupova.app.splash.SplashFragment"
+        android:label="@string/navigation_splash"
+        tools:layout="@layout/fragment_splash">
+    </fragment>
+
+</navigation>
