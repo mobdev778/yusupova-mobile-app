@@ -29,4 +29,14 @@ class GalleryRemoteRepositoryTest {
         }
     }
 
+    @Test
+    fun testGetPicture() {
+        runBlocking {
+            val pictures = repository.getPictures()
+            val pictureFile = repository.getPicture(pictures[0].path)
+            assertThat("Picture file should be existed", pictureFile.exists())
+            assertThat("Picture file should have non-zero length", pictureFile.length() > 0)
+        }
+    }
+
 }

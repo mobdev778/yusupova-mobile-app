@@ -20,12 +20,13 @@ class RemoteGalleryModule {
     }
 
     @Provides
-    internal fun providesRemoteVersesRepository(
+    internal fun providesGalleryRemoteRepository(
         appConfigRepository: IAppConfigRepository,
         galleryServiceApi: GalleryServiceApi
     ): IGalleryRemoteRepository {
         val appLocale = appConfigRepository.appLocale
-        return GalleryRemoteRepository(appLocale, galleryServiceApi)
+        val serverUrl = appConfigRepository.serverUrl
+        return GalleryRemoteRepository(appLocale, serverUrl, galleryServiceApi)
     }
 
 }

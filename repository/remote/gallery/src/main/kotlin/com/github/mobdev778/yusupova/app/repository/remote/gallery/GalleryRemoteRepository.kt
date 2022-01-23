@@ -18,6 +18,7 @@ import kotlin.coroutines.suspendCoroutine
 
 internal class GalleryRemoteRepository(
     val appLocale: AppLocale,
+    val serverUrl: String,
     val galleryServiceApi: GalleryServiceApi
 ): IGalleryRemoteRepository {
 
@@ -31,7 +32,7 @@ internal class GalleryRemoteRepository(
 
     @Suppress("BlockingMethodInNonBlockingContext")
     override suspend fun getPicture(path: String): File {
-        val stream = getPictureStream(path)
+        val stream = getPictureStream(serverUrl + path)
         stream.use {
             return withContext(Dispatchers.IO) {
                 val file = File.createTempFile("gallery", "jpg")
