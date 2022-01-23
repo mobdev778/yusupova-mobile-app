@@ -6,6 +6,9 @@ sealed class Libs(internal val name: String) {
         object appCompat: androidX("androidx.appcompat:appcompat:1.4.1")
         object constraintLayout: androidX("androidx.constraintlayout:constraintlayout:2.1.3")
 
+        object activityKtx: androidX("androidx.activity:activity-ktx:1.4.0")
+        object fragmentKtx: androidX("androidx.fragment:fragment-ktx:1.4.0")
+
     }
 
     sealed class android(name: String): Libs(name) {

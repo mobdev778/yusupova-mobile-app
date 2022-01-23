@@ -32,11 +32,15 @@ dependencies {
     )
 
     implementation(
+        Libs.androidX.fragmentKtx,
+
         Libs.androidX.coreKtx,
         Libs.androidX.appCompat,
         Libs.androidX.constraintLayout,
 
         Libs.android.material,
+
+        Libs.coroutines.core,
 
         Libs.kotlin.stdLib
     )
