@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -20,9 +21,6 @@ android {
         val options = this
         options.jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -32,13 +30,19 @@ dependencies {
     )
 
     implementation(
-        Libs.androidX.coreKtx,
-        Libs.androidX.appCompat,
-        Libs.androidX.constraintLayout,
+        Libs.kotlin.stdLib,
 
-        Libs.android.material,
+        Libs.dagger2.dagger,
 
-        Libs.kotlin.stdLib
+        Libs.retrofit2.retrofit,
+        Libs.retrofit2.moshi,
+        Libs.retrofit2.converterMoshi,
+
+        Libs.coroutines.core
+    )
+
+    kapt(
+        Libs.dagger2.daggerCompiler
     )
 
     testImplementation(

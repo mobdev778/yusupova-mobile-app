@@ -1,4 +1,4 @@
-sealed class Libs(val name: String) {
+sealed class Libs(internal val name: String) {
 
     sealed class androidX(name: String): Libs(name) {
 
@@ -24,6 +24,28 @@ sealed class Libs(val name: String) {
 
         object fragmentKtx: navigation("androidx.navigation:navigation-fragment-ktx:2.3.5")
         object uiKtx: navigation("androidx.navigation:navigation-ui-ktx:2.3.5")
+
+    }
+
+    sealed class dagger2(name: String): Libs(name) {
+
+        object dagger: dagger2("com.google.dagger:dagger:2.37")
+        object daggerCompiler: dagger2("com.google.dagger:dagger-compiler:2.37")
+
+    }
+
+    sealed class retrofit2(name: String): Libs(name) {
+
+        object retrofit: retrofit2("com.squareup.retrofit2:retrofit:2.9.0")
+        object moshi: retrofit2("com.squareup.moshi:moshi-kotlin:1.9.0")
+        object converterMoshi: retrofit2("com.squareup.retrofit2:converter-moshi:2.9.0")
+
+    }
+
+    sealed class coroutines(name: String): Libs(name) {
+
+        object core: coroutines("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+        object android: coroutines("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
 
     }
 

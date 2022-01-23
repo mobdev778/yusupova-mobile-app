@@ -2,10 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("androidx.navigation.safeargs.kotlin")
-}
-
-apply {
-    plugin("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -43,6 +40,14 @@ android {
 dependencies {
 
     implementation(
+        Modules.core,
+
+        Modules.repository.localGallery,
+        Modules.repository.remoteGallery,
+
+        Modules.repository.localVerses,
+        Modules.repository.remoteVerses,
+
         Modules.splash
     )
 
@@ -56,7 +61,13 @@ dependencies {
         Libs.kotlin.stdLib,
 
         Libs.navigation.fragmentKtx,
-        Libs.navigation.uiKtx
+        Libs.navigation.uiKtx,
+
+        Libs.dagger2.dagger
+    )
+
+    kapt(
+        Libs.dagger2.daggerCompiler
     )
 
     testImplementation(
