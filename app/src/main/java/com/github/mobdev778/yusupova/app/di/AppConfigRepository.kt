@@ -20,6 +20,6 @@ class AppConfigRepository(val context: Context): IAppConfigRepository {
     }
 
     override val serverUrl: String
-        get() = "https://github.com/mobdev778/yusupova-server"
+        get() = "https://raw.githubusercontent.com/mobdev778/yusupova-server/master/"
 
 }

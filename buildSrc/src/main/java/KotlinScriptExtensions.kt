@@ -34,3 +34,11 @@ fun DependencyHandler.`testImplementation`(vararg elements: TestLibs) {
     }
 }
 
+fun DependencyHandler.`kaptAndroidTest`(vararg libs: Libs) {
+    libs.forEach { lib ->
+        add("kaptAndroidTest", lib.name)
+    }
+}
+
+
+

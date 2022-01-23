@@ -26,7 +26,8 @@ android {
 dependencies {
 
     implementation(
-        Modules.core
+        Modules.core,
+        Modules.repository.remoteRetrofit
     )
 
     implementation(
@@ -36,7 +37,6 @@ dependencies {
 
         Libs.retrofit2.retrofit,
         Libs.retrofit2.moshi,
-        Libs.retrofit2.converterMoshi,
 
         Libs.coroutines.core
     )
@@ -51,7 +51,12 @@ dependencies {
 
     androidTestImplementation(
         AndroidTestLibs.extJUnit,
-        AndroidTestLibs.espressoCore
+        AndroidTestLibs.espressoCore,
+        AndroidTestLibs.coroutineCore
+    )
+
+    kaptAndroidTest(
+        Libs.dagger2.daggerCompiler
     )
 
 }

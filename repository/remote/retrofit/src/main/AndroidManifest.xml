@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.mobdev778.yusupova.app.repository.local.com.github.mobdev778.yusupova.app.repository.remote.verses">
+    package="com.github.mobdev778.yusupova.app.repository.remote.retrofit">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

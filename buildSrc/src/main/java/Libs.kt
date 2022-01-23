@@ -42,6 +42,13 @@ sealed class Libs(internal val name: String) {
 
     }
 
+    sealed class okHttp3(name: String): Libs(name) {
+
+        object okhttp: okHttp3("com.squareup.okhttp3:okhttp:4.9.3")
+        object loggingInterceptor: okHttp3("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+    }
+
     sealed class coroutines(name: String): Libs(name) {
 
         object core: coroutines("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
